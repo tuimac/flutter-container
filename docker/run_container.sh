@@ -7,7 +7,7 @@ function runContainer(){
     docker run -itd \
         --name ${NAME} \
         -h ${NAME} \
-        -p 8080:80 \
+        -p 8081:80 \
         ${NAME}
 }
 

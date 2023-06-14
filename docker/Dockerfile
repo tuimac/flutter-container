@@ -2,8 +2,9 @@ FROM ubuntu:latest
 
 ENV FLUTTER_DIR=/opt/flutter
 ENV WORK_DIR=/root
-ENV GITHUB="https://github.com/tuimac/flutter-dev-container.git"
-ENV APP_DIR="${WORK_DIR}/app"
+ENV GITHUB_REPO=flutter-dev-container
+ENV GITHUB_USER=tuimac
+ENV PJT_DIR="${WORK_DIR}/${GITHUB_REPO}"
 ENV PORT=80
 ENV PATH="${PATH}:${FLUTTER_DIR}/bin"
 
@@ -24,6 +25,6 @@ RUN apt update && \
     git clone https://github.com/flutter/flutter.git -b stable --depth 1 ${FLUTTER_DIR} && \
     flutter doctor && \
     flutter config --enable-web && \
-    git clone ${GITHUB}
+    git clone https://github.com/${GITHUB_USER}/${GITHUB_REPO}.git
 
-ENTRYPOINT config.sh ${APP_DIR} ${PORT}
+ENTRYPOINT ${WORK_DIR}/docker/config.sh ${APP_DIR} ${PORT}

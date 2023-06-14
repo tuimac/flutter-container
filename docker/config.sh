@@ -11,4 +11,4 @@ function main() {
     config
 }
 
-main $1
+main $@
