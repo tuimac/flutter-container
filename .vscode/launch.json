@@ -3,7 +3,7 @@
     "configurations": [
         {
             "name": "flutter-debug",
-            "program": "lib/main.dart",
+            "program": "app/lib/main.dart",
             "request": "launch",
             "type": "dart",
             "args": [
