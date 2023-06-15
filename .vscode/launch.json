@@ -1,0 +1,17 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "flutter-debug",
+            "program": "lib/main.dart",
+            "request": "launch",
+            "type": "dart",
+            "args": [
+                "--device-id",
+                "web-server",
+                "--web-hostname=0.0.0.0",
+                "--web-port=80"
+            ]
+        }
+    ]
+}
