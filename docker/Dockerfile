@@ -10,6 +10,7 @@ ENV FLUTTER_DIR=/opt/flutter
 ENV WORK_DIR=/root
 ENV GITHUB_REPO=flutter-dev-container
 ENV GITHUB_USER=tuimac
+ENV GITHUB_EMAIL=tuimac.devadm01@gmail.com
 ENV PJT_DIR="${WORK_DIR}/${GITHUB_REPO}/app"
 ENV ANDROID_DIR=/opt/android
 ENV ANDROID_HOME=${ANDROID_DIR}/cmdline-tools
@@ -30,7 +31,8 @@ RUN apt update && \
     wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb && \
     dpkg -i google-chrome-stable_current_amd64.deb && \
     rm -rf google-chrome-stable_current_amd64.deb && \
-    echo "Asia/Tokyo" > /etc/timezone && \
+    git config --global user.email ${GITHUB_EMAIL} && \
+    git config --global user.user ${GITHUB_USER} && \
     curl https://dl.google.com/android/repository/commandlinetools-linux-${ANDROID_SDK_VERSION}_latest.zip -o cmdline-tools.zip && \
     unzip cmdline-toos.zip -d ${ANDROID_DIR} && \
     git clone https://github.com/flutter/flutter.git -b stable --depth 1 ${FLUTTER_DIR} && \
