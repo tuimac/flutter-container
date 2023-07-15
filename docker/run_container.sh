@@ -3,7 +3,7 @@
 NAME='flutter-dev'
 
 function runContainer(){
-    #docker build -t ${NAME} . --no-cache
+    docker build -t ${NAME} . --no-cache
     docker run -itd \
         --name ${NAME} \
         -h ${NAME} \
