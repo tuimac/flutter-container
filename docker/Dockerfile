@@ -64,5 +64,4 @@ RUN apt update && \
     sdkmanager "platforms;${ANDROID_SDK_API_LEVEL}" "build-tools;${ANDROID_BUILD_TOOLS_VERSION}" --sdk_root=${ANDROID_HOME} && \
     sdkmanager --install "cmdline-tools;latest" --sdk_root=${ANDROID_HOME} && \
     yes | flutter doctor --android-licenses && \
-
     flutter doctor
